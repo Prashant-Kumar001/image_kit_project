@@ -7,7 +7,7 @@ interface ProvidersProps {
   session?: any
 }
 
-export default function Providers({ children, session }: ProvidersProps) {
+export default function SessionProviders({ children, session }: ProvidersProps) {
   return (
     <SessionProvider session={session}>
       {children}

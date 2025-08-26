@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import {  Poppins } from "next/font/google";
 import "./globals.css";
-import Providers from "@/components/providers";
+import SessionProviders from "@/components/SessionProviders";
+import Script from "next/script";
 
 
 
@@ -26,7 +27,11 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} antialiased`}
       >
-        <Providers>{children}</Providers>
+        <Script
+        src="https://checkout.razorpay.com/v1/checkout.js"
+        strategy="lazyOnload"
+      />
+        <SessionProviders>{children}</SessionProviders>
       </body>
     </html>
   );
